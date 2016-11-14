@@ -1,2 +1,5 @@
 .DS_Store
-.gradlew
+.gradle
+/gradle
+.idea
+/out

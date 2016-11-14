@@ -40,7 +40,7 @@ Common：
    - 后端：Go
 
 ## module 组成
-
+```
 ├── blog (社区和个人后端 REST 代码)
 ├── blog-front (社区和个人前端代码)
 ├── personal (个人写作后端 REST 代码)
@@ -52,3 +52,4 @@ Common：
 ├── lib-utils (通用工具类)
 ├── lib-markdown (markdown 编译工具)
 ├── email (email 服务)
+```

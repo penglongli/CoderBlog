@@ -19,10 +19,10 @@ Common：
 2. 图片存储及 CDN：七牛
 3. 数据库：MySQL
 4. 接口数据：ProtoBuf
-5. Collection Type & 消息订阅: Guava
+5. Collection Type & 消息订阅: Guava(待定)
 6. Caching Libray: caffeine
 7. 缓存: Redis
-8. JSON: gson
+8. JSON: Jackson
 
 单独产品技术：
 

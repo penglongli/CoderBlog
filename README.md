@@ -21,7 +21,7 @@ Common：
 4. 接口数据：ProtoBuf
 5. Collection Type & 消息订阅: Guava
 6. Caching Libray: caffeine
-7. 队列: Redis
+7. 缓存: Redis
 8. JSON: gson
 
 单独产品技术：
@@ -41,11 +41,11 @@ Common：
 
 ## module 组成
 ```
-├── blog (社区和个人后端 REST 代码)
-├── blog-front (社区和个人前端代码)
-├── personal (个人写作后端 REST 代码)
-├── personal-front (个人写作前端代码)
-├── admin (管理后台后端)
+├── blog (社区和个人后台 REST 代码)
+├── blog-front (社区和个人前台代码)
+├── personal (个人写作后台 REST 代码) 1
+├── personal-front (个人写作前台代码)
+├── admin (管理后台)
 ├── admin-front (管理后台前端)
 ├── lib-blog-db (blog 的 Java bean 和 JPA)
 ├── lib-proto (Protobuf 文件)

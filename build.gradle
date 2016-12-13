@@ -1,14 +1,9 @@
-//group 'com.coder'
-//version '1.0-SNAPSHOT'
-//
-//apply plugin: 'java'
-//apply plugin: 'war'
+group 'com.coder'
+version '1.0-SNAPSHOT'
+
 
 repositories {
     mavenCentral()
-    dependencies {
-        classpath 'io.spring.gradle:dependency-management-plugin:0.4.0.RELEASE'
-    }
 }
 
 task wrapper(type: Wrapper) {
@@ -30,19 +25,9 @@ subprojects {
         protobufVersion = '3.0.0-beta-3'
     }
 
-    apply plugin: 'java'
-    apply plugin: 'io.spring.dependency-management'
-
-    dependencyManagement {
-        imports {
-            mavenBom 'io.spring.platform:platform-bom:1.1.1.RELEASE'
-        }
-    }
-
     dependencies {
-        compile "org.projectlombok:lombok:1.16.10"
+        compile "org.projectlombok:lombok:1.16.12"
         compile "org.apache.commons:commons-lang3:3.5"
-        compile "org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final"
 
         testCompile group: 'junit', name: 'junit', version: '4.11'
     }

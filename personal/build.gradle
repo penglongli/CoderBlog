@@ -1,21 +1,14 @@
-group 'com.coder'
-version '1.0-SNAPSHOT'
-
-apply plugin: 'java'
-
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-}
 
 dependencies {
-    compile "org.springframework.boot:spring-boot-starter-web:1.4.2.RELEASE"
-    compile "com.graphql-java:graphql-java:2.2.0"
-    compile "org.apache.shiro:shiro-all:1.4.0-RC2"
-    compile 'com.github.ben-manes.caffeine:caffeine:2.3.5'
+    ext {
+        springBootVersion = "1.4.2.RELEASE"
+        graphQlVersion = "2.2.0"
+        shiroVersion = "1.4.0-RC2"
+        caffeineVersion = "2.3.5"
+    }
 
-    // JPA
-    // compile 'org.springframework.data:spring-data-jpa'
-    // compile 'org.springframework.data:spring-data-rest'
+    compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+    compile "com.graphql-java:graphql-java:$graphQlVersion"
+    compile "org.apache.shiro:shiro-all:$shiroVersion"
+    compile "com.github.ben-manes.caffeine:caffeine:$caffeineVersion"
 }

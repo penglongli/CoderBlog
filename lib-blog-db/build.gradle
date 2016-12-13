@@ -1,0 +1,10 @@
+
+dependencies {
+    ext {
+        entityVersion = "5.2.2.Final"
+        springJpaVersion = "1.10.5.RELEASE"
+    }
+
+    compile "org.hibernate:hibernate-entitymanager:$entityVersion"
+    compile "org.springframework.data:spring-data-jpa:$springJpaVersion"
+}

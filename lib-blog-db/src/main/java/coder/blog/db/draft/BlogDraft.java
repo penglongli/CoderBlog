@@ -1,8 +1,9 @@
-package coder.blog.db.resume;
+package coder.blog.db.draft;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -12,6 +13,11 @@ import javax.persistence.Table;
 @Data
 @Entity
 @EqualsAndHashCode(callSuper = false)
-@Table(name = "`coder_resumes`")
-public class CoderResume {
+@Table(name = "`blog_drafts`")
+public class BlogDraft {
+
+    @Column(name = "user_id")
+    private Integer userId;
+
+
 }

@@ -14,8 +14,8 @@ import javax.persistence.Table;
 @Data
 @Entity
 @EqualsAndHashCode(callSuper = false)
-@Table(name = "`coder_articles`")
-public class CoderArticle extends BaseEntity{
+@Table(name = "`blog_articles`")
+public class BlogArticle extends BaseEntity{
 
     @Column(name = "user_id")
     private Integer userId;
@@ -29,18 +29,21 @@ public class CoderArticle extends BaseEntity{
     @Column(name = "html_content")
     private String htmlContent;
 
-    @Column(name = "tag_id")
-    private String tagId;
-
     @Column(name = "description")
     private String description;
 
+    // 原创、转载、翻译
     @Column(name = "type")
     private Integer type;
+
+    // 原始地址: 未保证版权, 转载、翻译的文章需注明原文链接
+    @Column(name = "original_address")
+    private String originalAddress;
 
     @Column(name = "category_id")
     private String categoryId;
 
+    // 首页分类
     @Column(name = "article_class")
     private Integer articleClass;
 
@@ -48,5 +51,8 @@ public class CoderArticle extends BaseEntity{
     private Integer thumbNum;
 
     @Column(name = "read_num")
-    private Integer readNum;
+    private Long readNum;
+
+    @Column(name = "hidden")
+    private Boolean hidden;
 }

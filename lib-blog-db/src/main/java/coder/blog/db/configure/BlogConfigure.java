@@ -13,5 +13,5 @@ import javax.persistence.Table;
 @Entity
 @EqualsAndHashCode(callSuper = false)
 @Table(name = "`coder_configures`")
-public class CoderConfigure {
+public class BlogConfigure {
 }

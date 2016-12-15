@@ -1,0 +1,22 @@
+apply plugin: 'com.google.protobuf'
+
+dependencies {
+    compile "com.google.protobuf:protobuf-java:${protobufVersion}"
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:${protobufVersion}"
+    }
+    generatedFilesBaseDir = "$projectDir/src/generated"
+    clean {
+        delete generatedFilesBaseDir
+    }
+}
+
+idea {
+    module {
+        sourceDirs += file("src/generated/main/java")
+        generatedSourceDirs += file("src/generated/main/java")
+    }
+}

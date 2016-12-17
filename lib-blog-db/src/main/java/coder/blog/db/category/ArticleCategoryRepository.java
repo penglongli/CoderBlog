@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 /**
  * Created by Pelin on 16/12/11.
  */
-public interface BlogCategoryRepository extends CrudRepository<BlogCategory, Integer> {
+public interface ArticleCategoryRepository extends CrudRepository<ArticleCategory, Integer> {
 
 }

@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Entity
 @EqualsAndHashCode(callSuper = false)
 @Table(name = "`blog_categories`")
-public class BlogCategory extends BaseEntity{
+public class ArticleCategory extends BaseEntity{
 
     @Column(name = "user_id")
     private Integer userId;

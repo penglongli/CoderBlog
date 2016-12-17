@@ -34,7 +34,7 @@ public class BlogArticle extends BaseEntity{
 
     // 原创、转载、翻译
     @Column(name = "type")
-    private Integer type;
+    private Short type;
 
     // 原始地址: 未保证版权, 转载、翻译的文章需注明原文链接
     @Column(name = "original_address")

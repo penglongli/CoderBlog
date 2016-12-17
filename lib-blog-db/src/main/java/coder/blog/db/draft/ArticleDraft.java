@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Entity
 @EqualsAndHashCode(callSuper = false)
 @Table(name = "`blog_drafts`")
-public class BlogDraft {
+public class ArticleDraft {
 
     @Column(name = "user_id")
     private Integer userId;

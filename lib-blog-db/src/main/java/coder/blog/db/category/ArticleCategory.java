@@ -25,7 +25,4 @@ public class ArticleCategory extends BaseEntity{
 
     @Column(name = "sequence")
     private Integer sequence;
-
-    @Column(name = "hidden")
-    private Boolean hidden;
 }

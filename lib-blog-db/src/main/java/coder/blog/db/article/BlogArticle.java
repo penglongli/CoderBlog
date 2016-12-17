@@ -20,6 +20,9 @@ public class BlogArticle extends BaseEntity{
     @Column(name = "user_id")
     private Integer userId;
 
+    @Column(name = "category_id")
+    private Integer categoryId;
+
     @Column(name = "title")
     private String title;
 
@@ -36,12 +39,9 @@ public class BlogArticle extends BaseEntity{
     @Column(name = "type")
     private Short type;
 
-    // 原始地址: 未保证版权, 转载、翻译的文章需注明原文链接
+    // 原始地址: 为保证版权, 转载、翻译的文章需注明原文链接
     @Column(name = "original_address")
     private String originalAddress;
-
-    @Column(name = "category_id")
-    private String categoryId;
 
     // 首页分类
     @Column(name = "article_class")

@@ -112,3 +112,4 @@ CREATE TABLE `thumbs` (
 )
   ENGINE = InnoDB
   COMMENT = '文章、评论点赞关系表'
+

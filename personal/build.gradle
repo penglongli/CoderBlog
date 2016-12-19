@@ -7,6 +7,7 @@ dependencies {
         caffeineVersion = "2.3.5"
     }
 
+    compile "javax.servlet:javax.servlet-api:3.1.0"
     compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
     compile "com.graphql-java:graphql-java:$graphQlVersion"
     compile "org.apache.shiro:shiro-all:$shiroVersion"

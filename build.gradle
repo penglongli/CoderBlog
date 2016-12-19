@@ -2,7 +2,7 @@ group 'com.coder'
 version '1.0-SNAPSHOT'
 
 task wrapper(type: Wrapper) {
-    gradleVersion = "3.2"
+    gradleVersion = "3.2.1"
 }
 
 allprojects {
@@ -16,10 +16,6 @@ allprojects {
 subprojects {
     repositories {
         mavenCentral()
-    }
-    ext {
-        springBootVersion = '1.3.5.RELEASE'
-        protobufVersion = '3.0.0'
     }
 
     buildscript {

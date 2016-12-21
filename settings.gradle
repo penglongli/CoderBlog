@@ -12,3 +12,5 @@ include 'lib-utils'
 include 'lib-markdown'
 include 'email'
 include 'lib-sso'
+include 'lib-account-db'
+

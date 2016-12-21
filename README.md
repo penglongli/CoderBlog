@@ -6,10 +6,12 @@
 
 结构：
 
-- 社区前台：http://www.coder-blogs.com
-- 个人管理：http://write.coder-blogs.com
-- 个人前台: http://www.coder-blogs.com/xxx
-- 管理后台：http://admin.coder-blogs.com
+- 社区前台：https://www.coder-blogs.com
+- 个人管理：https://write.coder-blogs.com
+- 个人前台：https://www.coder-blogs.com/xxx
+- 管理后台：https://admin.coder-blogs.com
+- SSO: https://accounts.coder-blogs.com
+- 社区：https://geek.coder-blogs.com（暂未定）
 
 ## 技术架构
 

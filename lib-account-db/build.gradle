@@ -1,0 +1,25 @@
+sourceSets {
+    generated
+}
+
+sourceSets.generated.java.srcDirs = ['src/main/querydsl']
+
+configurations {
+    querydslapt
+}
+
+dependencies {
+    compile "org.hibernate:hibernate-entitymanager:$entityVersion"
+    compile "org.springframework.data:spring-data-jpa:$springDataJpaVersion"
+    compile "com.mysema.querydsl:querydsl-jpa:$queryDslVersion"
+    compile "com.mysema.querydsl:querydsl-apt:$queryDslVersion"
+}
+
+compileJava {
+    classpath = configurations.compile + configurations.querydslapt
+    options.compilerArgs = [
+            "-proc:only",
+            "-processor", "com.mysema.query.apt.jpa.JPAAnnotationProcessor"
+    ]
+    destinationDir = sourceSets.generated.java.srcDirs.iterator().next()
+}

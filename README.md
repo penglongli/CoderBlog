@@ -6,12 +6,40 @@
 
 结构：
 
-- 社区前台：https://www.coder-blogs.com
+- 站点前台：https://www.coder-blogs.com
 - 个人管理：https://write.coder-blogs.com
-- 个人前台：https://www.coder-blogs.com/xxx
+- 个人前台：https://coder-blogs.com/xxx
 - 管理后台：https://admin.coder-blogs.com
-- SSO: https://accounts.coder-blogs.com
 - 社区：https://geek.coder-blogs.com（暂未定）
+
+### SSO 结构
+    Domain: https://accounts.coder-blogs.com
+    登录: Domain/login
+    注册: Domain/register
+    资料编辑:
+        - Domain/settings
+
+    个人主页:
+        - Domain/gk
+
+### 个人前台
+    Domain: https://coder-blogs.com
+
+    博客主页: Domain/gk
+    文章详情: Domain/gk/article/slug
+    文章分类: Domain/gk/category/slug
+    标签分类: Domain/gk/tag/slug
+    存档: Domain/gk/archive/xxxx/xx
+
+## 站点前台
+    Domain: https://coder-blogs.com
+
+    首页: Domain
+
+    说说: Domain/explore
+
+    推荐: Domain/
+
 
 ## 技术架构
 

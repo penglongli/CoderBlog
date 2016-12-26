@@ -1,4 +1,4 @@
-package coder.lib.sso.Auth;
+package coder.lib.sso.auth;
 
 import org.springframework.stereotype.Service;
 

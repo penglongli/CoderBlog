@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Entity
 @EqualsAndHashCode(callSuper = false)
 @Table(name = "`accounts`")
-public class CoderAccount extends BaseEntity{
+public class Account extends BaseEntity{
 
     @Column(name = "password")
     private String password;

@@ -18,6 +18,4 @@ public class LoginForm extends BaseForm {
     @NotBlank(message = "")
     @Size(min = 7)
     private String password;
-
-
 }

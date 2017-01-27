@@ -1,26 +1,24 @@
-package coder.blog.personal.app.category;
+package coder.blog.personal.app.thumb;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.Valid;
-
 /**
- * Created by Pelin on 16/12/11.
+ * Created by Pelin on 17/1/27.
  */
 @RestController
-@RequestMapping(value = "/api/v1/category")
-public class CategoryController {
+@RequestMapping(value = "/api/v1/thumb")
+public class ThumbController {
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    @RequestMapping(value = "")
     public void index() {
 
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public void add(@Valid CategoryForm categoryForm) {
+    public void add() {
 
     }
 
@@ -30,12 +28,7 @@ public class CategoryController {
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
-    public void update(@Valid CategoryForm form) {
-
-    }
-
-    @RequestMapping(value = "/{slug}/detail", method = RequestMethod.GET)
-    public void detail(@PathVariable String slug) {
+    public void update() {
 
     }
 }

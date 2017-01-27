@@ -17,6 +17,9 @@ import javax.persistence.Table;
 @Table(name = "`blog_categories`")
 public class ArticleCategory extends BaseEntity{
 
+    @Column(name = "slug")
+    private String slug;
+
     @Column(name = "user_id")
     private Integer userId;
 

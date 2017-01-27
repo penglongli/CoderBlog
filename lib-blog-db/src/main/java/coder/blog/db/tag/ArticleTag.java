@@ -19,4 +19,7 @@ public class ArticleTag extends BaseEntity{
 
     @Column(name = "name")
     private String name;
+
+    @Column(name = "slug")
+    private String slug;
 }

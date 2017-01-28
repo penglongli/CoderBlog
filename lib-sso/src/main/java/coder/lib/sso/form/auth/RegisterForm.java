@@ -24,6 +24,9 @@ public class RegisterForm extends BaseForm {
     @Size(min = 7, max = 72)
     private String password;
 
+    @NotBlank(message = "")
+    private String type;
+
     @Override
     public void validate(Object target, Errors errors) {
         if (userName.contains(".")) {

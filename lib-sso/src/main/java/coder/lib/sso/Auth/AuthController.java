@@ -3,6 +3,7 @@ package coder.lib.sso.auth;
 import coder.lib.sso.form.auth.LoginForm;
 import coder.lib.sso.form.auth.RegisterForm;
 import coder.lib.utils.Result;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,12 +20,11 @@ import javax.validation.Valid;
 @RequestMapping(value = "/api/v1/auth")
 public class AuthController {
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public void login(@Valid LoginForm loginForm,
-                         HttpServletRequest request,
-                         @RequestHeader(value = "User-Agent") String userAgent,
-                         @RequestAttribute String realRemoteAddress) {
-    }
+    @Autowired
+    private RegisterService registerService;
+
+    @Autowired
+    private LoginService loginService;
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public void register(@Valid RegisterForm registerForm,
@@ -32,6 +32,13 @@ public class AuthController {
                          @RequestHeader(value = "User-Agent") String userAgent,
                          @RequestAttribute String realRemoteAddress) {
 
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public void login(@Valid LoginForm loginForm,
+                      HttpServletRequest request,
+                      @RequestHeader(value = "User-Agent") String userAgent,
+                      @RequestAttribute String realRemoteAddress) {
     }
 
 }

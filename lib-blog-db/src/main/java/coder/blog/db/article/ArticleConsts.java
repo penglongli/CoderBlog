@@ -1,4 +1,4 @@
-package coder.blog.personal.app.article;
+package coder.blog.db.article;
 
 import lombok.Getter;
 

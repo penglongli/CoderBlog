@@ -1,4 +1,4 @@
-package coder.blog.personal.app.thumb;
+package coder.blog.db.thumb;
 
 /**
  * Created by Pelin on 16/12/17.

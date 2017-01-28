@@ -1,6 +1,8 @@
 package coder.lib.sso.form.auth;
 
 import coder.lib.sso.form.BaseForm;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.validation.Errors;
 
@@ -9,6 +11,8 @@ import javax.validation.constraints.Size;
 /**
  * Created by Pelin on 16/12/26.
  */
+@Data
+@EqualsAndHashCode(callSuper = false)
 public class RegisterForm extends BaseForm {
 
     // 用户名, 不允许特殊符号

@@ -24,7 +24,7 @@ public class CategoryController {
 
     }
 
-    @RequestMapping(value = "/{slug}/delete", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{slug}", method = RequestMethod.DELETE)
     public void delete(@PathVariable Integer slug) {
 
     }
@@ -34,7 +34,7 @@ public class CategoryController {
 
     }
 
-    @RequestMapping(value = "/{slug}/detail", method = RequestMethod.GET)
+    @RequestMapping(value = "/{slug}", method = RequestMethod.GET)
     public void detail(@PathVariable String slug) {
 
     }

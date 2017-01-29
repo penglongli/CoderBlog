@@ -8,15 +8,15 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class BaseException extends RuntimeException{
-    private int status;
+class BaseException extends RuntimeException{
+    private int code;
 
-    protected BaseException(int status) {
-        this.status = status;
+    BaseException(int code) {
+        this.code = code;
     }
 
-    protected BaseException(int status, String msg) {
+    BaseException(int code, String msg) {
         super(msg);
-        this.status = status;
+        this.code = code;
     }
 }

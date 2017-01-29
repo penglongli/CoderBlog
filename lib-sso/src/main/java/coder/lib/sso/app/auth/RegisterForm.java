@@ -1,6 +1,6 @@
-package coder.lib.sso.form.auth;
+package coder.lib.sso.app.auth;
 
-import coder.lib.sso.form.BaseForm;
+import coder.lib.sso.app.BaseForm;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.hibernate.validator.constraints.NotBlank;
@@ -18,10 +18,11 @@ public class RegisterForm extends BaseForm {
     // 用户名, 不允许特殊符号
     @NotBlank(message = "")
     @Size(min = 1, max = 30)
-    private String userName;
+    private String globalKey;
 
-    @NotBlank(message = "")
     private String email;
+
+    private String phone;
 
     // 必须同时包含小写字母以及数字
     @NotBlank(message = "")
@@ -29,11 +30,15 @@ public class RegisterForm extends BaseForm {
     private String password;
 
     @NotBlank(message = "")
+    @Size(min = 7, max = 72)
+    private String repeatPassword;
+
+    @NotBlank(message = "")
     private String type;
 
     @Override
     public void validate(Object target, Errors errors) {
-        if (userName.contains(".")) {
+        if (globalKey.contains(".")) {
             rejectValue(errors, "globalKey", "");
         }
     }

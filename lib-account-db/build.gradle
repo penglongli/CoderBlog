@@ -9,6 +9,7 @@ configurations {
 }
 
 dependencies {
+    compile project(":lib-core")
     compile "org.hibernate:hibernate-entitymanager:$entityVersion"
     compile "org.springframework.data:spring-data-jpa:$springDataJpaVersion"
     compile "com.mysema.querydsl:querydsl-jpa:$queryDslVersion"

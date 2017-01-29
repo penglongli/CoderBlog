@@ -1,4 +1,4 @@
-package coder.lib.sso.form;
+package coder.lib.sso.app;
 
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;

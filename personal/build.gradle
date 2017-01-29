@@ -1,6 +1,6 @@
 
 dependencies {
-    compile "javax.servlet:javax.servlet-api:3.1.0"
+    compile "javax.servlet:javax.servlet-api:$servletVersion"
     compile "com.graphql-java:graphql-java:$graphQlVersion"
     compile "org.apache.shiro:shiro-all:$shiroVersion"
     compile "com.github.ben-manes.caffeine:caffeine:$caffeineVersion"

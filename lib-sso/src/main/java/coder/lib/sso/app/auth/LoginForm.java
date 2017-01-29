@@ -1,6 +1,6 @@
-package coder.lib.sso.form.auth;
+package coder.lib.sso.app.auth;
 
-import coder.lib.sso.form.BaseForm;
+import coder.lib.sso.app.BaseForm;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.constraints.Size;

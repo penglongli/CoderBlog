@@ -1,8 +1,5 @@
-package coder.lib.sso.auth;
+package coder.lib.sso.app.auth;
 
-import coder.lib.sso.form.auth.LoginForm;
-import coder.lib.sso.form.auth.RegisterForm;
-import coder.lib.utils.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestHeader;

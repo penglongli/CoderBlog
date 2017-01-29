@@ -17,6 +17,12 @@ import javax.persistence.Table;
 @Table(name = "`global_keys`")
 public class GlobalKey extends BaseEntity{
 
-    @Column(name = "global_key")
-    private String globalKey;
+    @Column(name = "name")
+    private String name;
+
+    public GlobalKey() {}
+
+    public GlobalKey(String name) {
+        this.name = name;
+    }
 }

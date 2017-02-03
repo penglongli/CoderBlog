@@ -2,4 +2,6 @@ dependencies {
     compile project(":lib-account-db")
     compile project(":lib-core")
     compile project(":lib-utils")
+
+    compile "commons-codec:commons-codec:$codecVersion"
 }

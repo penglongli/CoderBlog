@@ -1,0 +1,5 @@
+
+dependencies {
+    compile "redis.clients:jedis:$jedisVersion"
+    compile "com.rabbitmq:amqp-client:$rabbitMQVersion"
+}

@@ -1,24 +1,20 @@
 package coder.lib.sso.app.auth;
 
 import coder.account.db.account.Account;
+import coder.account.db.account.AccountConst;
 import coder.account.db.key.GlobalKey;
 import coder.account.db.key.GlobalKeyRepository;
 import coder.lib.core.bean.User;
 import coder.lib.sso.app.account.AccountService;
 import coder.lib.sso.app.key.GlobalKeyService;
 import coder.lib.sso.exception.BadRequestException;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.tomcat.jni.Global;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpServletRequest;
 
-import java.sql.Timestamp;
-
 import static coder.account.db.account.AccountConst.*;
-import static org.apache.commons.lang3.StringUtils.defaultIfEmpty;
 
 /**
  * Created by Pelin on 16/12/26.
@@ -63,7 +59,7 @@ public class RegisterService {
         String key = globalKey.getName();
         account = accountService.save(account, key);
 
-        return accountService.transAccountToUser(account);
+        return accountService.transAccountToUser(account, key);
     }
 
     private User phoneRegister(RegisterForm form, GlobalKey globalKey) {
@@ -73,7 +69,7 @@ public class RegisterService {
         String key = globalKey.getName();
         account = accountService.save(account, key);
 
-        return accountService.transAccountToUser(account);
+        return accountService.transAccountToUser(account, key);
     }
 
     private Account buildAccount(RegisterForm form, Integer gkId) {
@@ -95,6 +91,7 @@ public class RegisterService {
                 throw new BadRequestException("register.type.not.valid");
             }
         }
+        account.setStatus((short) AccountStatus.NORMAL.getCode());
         account.setPassword(form.getPassword());
         return account;
     }

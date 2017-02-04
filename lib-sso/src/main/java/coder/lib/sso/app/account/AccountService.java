@@ -2,7 +2,6 @@ package coder.lib.sso.app.account;
 
 import coder.account.db.account.Account;
 import coder.account.db.account.AccountRepository;
-import coder.account.db.key.GlobalKey;
 import coder.lib.core.bean.User;
 import coder.lib.sso.exception.BadRequestException;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -10,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
+import static coder.account.db.account.AccountConst.*;
 
 /**
  * Created by Pelin on 17/2/3.
@@ -21,7 +22,6 @@ public class AccountService {
     private AccountRepository accountRepository;
 
     public Account save(Account account, String globalKey) {
-
         String email = account.getEmail();
         if (!"".equals(email) && emailExists(email)) {
             throw new BadRequestException("register.email.is.exists");
@@ -42,17 +42,16 @@ public class AccountService {
         return accountRepository.save(account);
     }
 
-    public User transAccountToUser(Account account) {
+    public User transAccountToUser(Account account, String globalKey) {
         User user = new User();
 
-        return null;
+        user.setLastLoginAt(account.getLastLoginAt());
+        user.setStatus(AccountStatus.getMsg(account.getStatus()));
+        user.setGlobalKey(globalKey);
+
+        return user;
     }
 
-    /**
-     * 判断 email 是否存在
-     * @param name
-     * @return
-     */
     private boolean emailExists(String email) {
         List<Account> list = accountRepository.findByEmail(email);
 

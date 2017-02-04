@@ -7,6 +7,7 @@ import lombok.EqualsAndHashCode;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.sql.Timestamp;
 
 /**
  * Created by Pelin on 16/12/21.
@@ -49,4 +50,7 @@ public class Account extends BaseEntity{
 
     @Column(name = "company")
     private String company;
+
+    @Column(name = "last_login_at")
+    private Timestamp lastLoginAt;
 }

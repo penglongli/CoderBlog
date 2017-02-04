@@ -1,5 +1,6 @@
 package coder.lib.sso.app.auth;
 
+import coder.lib.core.bean.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -24,11 +25,11 @@ public class AuthController {
     private LoginService loginService;
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public void register(@Valid RegisterForm registerForm,
+    public User register(@Valid RegisterForm registerForm,
                          HttpServletRequest request,
                          @RequestHeader(value = "User-Agent") String userAgent,
                          @RequestAttribute String realRemoteAddress) {
-
+        return registerService.registerV1(request, registerForm);
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)

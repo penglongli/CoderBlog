@@ -34,7 +34,7 @@ public abstract class BaseEntity {
 
     @PrePersist
     void onCreate() {
-        this.createdAt = new Timestamp((new Date().getTime()));
+        this.createdAt = new Timestamp(System.currentTimeMillis());
         this.updatedAt = this.createdAt;
         this.deletedAt = DELETE_AT;
     }

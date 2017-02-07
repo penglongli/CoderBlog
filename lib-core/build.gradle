@@ -1,3 +1,5 @@
 dependencies {
+    compile(":lib-common")
+
     compile "org.springframework.data:spring-data-commons:$springDataCommonsVersion"
 }

@@ -3,8 +3,6 @@ package coder.lib.core.assem;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.util.Map;
-
 /**
  * Created by Pelin on 17/1/29.
  */

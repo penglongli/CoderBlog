@@ -8,6 +8,7 @@ import coder.lib.core.bean.User;
 import coder.lib.sso.app.account.AccountService;
 import coder.lib.sso.app.key.GlobalKeyService;
 import coder.lib.sso.exception.BadRequestException;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -40,11 +41,9 @@ public class RegisterService {
 
         String type = form.getType();
         switch (type) {
-            case TYPE_EMAIL: {
-                return emailRegister(form, globalKey);
-            }
+            case TYPE_EMAIL:
             case TYPE_PHONE: {
-                return phoneRegister(form, globalKey);
+                return register(form, globalKey, sessionId);
             }
             default: {
                 throw new BadRequestException("register.type.not.valid");
@@ -52,17 +51,7 @@ public class RegisterService {
         }
     }
 
-    private User emailRegister(RegisterForm form, GlobalKey globalKey) {
-        Integer gkId = globalKey.getId();
-        Account account = buildAccount(form, gkId);
-
-        String key = globalKey.getName();
-        account = accountService.save(account, key);
-
-        return accountService.transAccountToUser(account, key);
-    }
-
-    private User phoneRegister(RegisterForm form, GlobalKey globalKey) {
+    private User register(RegisterForm form, GlobalKey globalKey, String sessionId) {
         Integer gkId = globalKey.getId();
         Account account = buildAccount(form, gkId);
 
@@ -79,11 +68,11 @@ public class RegisterService {
         switch (form.getType()) {
             case TYPE_EMAIL: {
                 account.setEmail(form.getEmail());
-                account.setPhone("");
+                account.setPhone(StringUtils.EMPTY);
                 break;
             }
             case TYPE_PHONE: {
-                account.setEmail("");
+                account.setEmail(StringUtils.EMPTY);
                 account.setPhone(form.getPhone());
                 break;
             }

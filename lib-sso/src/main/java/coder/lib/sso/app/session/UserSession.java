@@ -1,13 +1,12 @@
-package coder.lib.core.session;
+package coder.lib.sso.app.session;
 
-import coder.lib.core.bean.User;
+import coder.lib.sso.app.bean.User;
 import lombok.Data;
 
 import java.sql.Timestamp;
 
-/**
- * @Author: Pelin on 17/2/5.
- * @Email: penglong95.li@gmail.com
+/*
+ * Created by Pelin on 17/2/5.
  */
 @Data
 public class UserSession {

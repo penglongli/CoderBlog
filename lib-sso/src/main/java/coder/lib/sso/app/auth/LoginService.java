@@ -1,7 +1,7 @@
 package coder.lib.sso.app.auth;
 
-import coder.lib.core.bean.User;
-import coder.lib.core.session.UserSession;
+import coder.lib.sso.app.bean.User;
+import coder.lib.sso.app.session.UserSession;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,7 +14,7 @@ public class LoginService {
         UserSession userSession = new UserSession();
 
         userSession.setUser(user);
-        userSession.setRemember_me(rememberMe);
+        userSession.setRememberMe(rememberMe);
         store.set(sid, session);
     }
 }

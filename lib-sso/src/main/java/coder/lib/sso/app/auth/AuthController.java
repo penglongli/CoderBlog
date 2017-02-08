@@ -1,6 +1,6 @@
 package coder.lib.sso.app.auth;
 
-import coder.lib.core.bean.User;
+import coder.lib.sso.app.bean.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestHeader;

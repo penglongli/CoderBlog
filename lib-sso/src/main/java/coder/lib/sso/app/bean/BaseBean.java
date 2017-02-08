@@ -1,4 +1,4 @@
-package coder.lib.core.bean;
+package coder.lib.sso.app.bean;
 
 import lombok.Data;
 

@@ -1,10 +1,9 @@
 package coder.lib.sso.app.auth;
 
 import coder.account.db.account.Account;
-import coder.account.db.account.AccountConst;
 import coder.account.db.key.GlobalKey;
 import coder.account.db.key.GlobalKeyRepository;
-import coder.lib.core.bean.User;
+import coder.lib.sso.app.bean.User;
 import coder.lib.sso.app.account.AccountService;
 import coder.lib.sso.app.key.GlobalKeyService;
 import coder.lib.sso.exception.BadRequestException;

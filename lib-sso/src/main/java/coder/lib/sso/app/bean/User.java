@@ -1,4 +1,4 @@
-package coder.lib.core.bean;
+package coder.lib.sso.app.bean;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -28,6 +28,4 @@ public class User extends BaseBean {
     private Boolean emailValidation;
 
     private Boolean phoneValidation;
-
-
 }

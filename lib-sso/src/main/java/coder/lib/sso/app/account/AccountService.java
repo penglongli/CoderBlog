@@ -2,7 +2,7 @@ package coder.lib.sso.app.account;
 
 import coder.account.db.account.Account;
 import coder.account.db.account.AccountRepository;
-import coder.lib.core.bean.User;
+import coder.lib.sso.app.bean.User;
 import coder.lib.sso.exception.BadRequestException;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;

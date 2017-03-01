@@ -21,45 +21,34 @@ public class AccountService {
     @Autowired
     private AccountRepository accountRepository;
 
-    public Account save(Account account, String globalKey) {
+    public Account save(Account account) {
         String email = account.getEmail();
-        if (!"".equals(email) && emailExists(email)) {
+        if (emailExists(email)) {
             throw new BadRequestException("register.email.is.exists");
-        }
-
-        String phone = account.getPhone();
-        if (!"".equals(phone) && phoneExists(phone)) {
-            throw new BadRequestException("register.phone.is.exists");
         }
 
         String password = account.getPassword();
         account.setPassword(
                 DigestUtils.sha512Hex(
-                        password + "." + globalKey
+                        password + "." + account.getName()
                 )
         );
 
         return accountRepository.save(account);
     }
 
-    public User transAccountToUser(Account account, String globalKey) {
+    public User transAccountToUser(Account account) {
         User user = new User();
 
         user.setLastLoginAt(account.getLastLoginAt());
-        user.setStatus(AccountStatus.getMsg(account.getStatus()));
-        user.setGlobalKey(globalKey);
-
+        user.setStatus(
+                AccountStatus.getMsg(account.getStatus())
+        );
         return user;
     }
 
     private boolean emailExists(String email) {
         List<Account> list = accountRepository.findByEmail(email);
-
-        return list != null && list.size() > 0;
-    }
-
-    private boolean phoneExists(String phone) {
-        List<Account> list = accountRepository.findByPhone(phone);
 
         return list != null && list.size() > 0;
     }

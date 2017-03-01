@@ -7,53 +7,27 @@ import org.apache.commons.lang3.StringUtils;
  * Created by Pelin on 17/1/28.
  */
 public class AccountConst {
-    public static final String TYPE_EMAIL = "TYPE_EMAIL";
-    public static final String TYPE_PHONE = "TYPE_PHONE";
-    public static final String STATUS_NORMAL = "STATUS_NORMAL";
-    public static final String STATUS_BLOCKED = "STATUS_BLOCKED";
-
-    public enum AccountType {
-        EMAIL(1, TYPE_EMAIL),
-        PHONE(2, TYPE_PHONE);
-
-        @Getter
-        private int code;
-        @Getter
-        private String msg;
-
-        AccountType(int code, String msg) {
-            this.code = code;
-            this.msg = msg;
-        }
-
-        public static int getCode(String msg) {
-            for (AccountType type : AccountType.values()) {
-                if (type.getMsg().equals(msg)) {
-                    return type.code;
-                }
-            }
-            return 0;
-        }
-    }
+    public static final short STATUS_NORMAL = 1;
+    public static final short STATUS_BLOCKED = 2;
 
     public enum AccountStatus {
-        NORMAL(1, STATUS_NORMAL),
-        BLOCKED(2, STATUS_BLOCKED);
+        NORMAL(STATUS_NORMAL, "STATUS_NORMAL"),
+        BLOCKED(STATUS_BLOCKED, "STATUS_BLOCKED");
 
         @Getter
-        private int code;
+        private short code;
         @Getter
         private String msg;
 
-        AccountStatus(int code, String msg) {
+        AccountStatus(short code, String msg) {
             this.code = code;
             this.msg = msg;
         }
 
-        public static String getMsg(int code) {
-            for (AccountType type : AccountType.values()) {
-                if (type.getCode() == code) {
-                    return type.getMsg();
+        public static String getMsg(short code) {
+            for (AccountStatus status : AccountStatus.values()) {
+                if (code == status.code) {
+                    return status.msg;
                 }
             }
             return StringUtils.EMPTY;

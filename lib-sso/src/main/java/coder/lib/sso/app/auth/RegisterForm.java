@@ -18,18 +18,16 @@ public class RegisterForm extends BaseForm {
     // 用户名, 不允许特殊符号
     @NotBlank(message = "register.global.key.not.null")
     @Size(min = 1, max = 30)
-    private String globalKey;
+    private String name;
 
+    @NotBlank(message = "register.email.not.null")
     private String email;
-
-    private String phone;
 
     @NotBlank(message = "register.validate.code.not.null")
     @Size(min = 6, max = 6)
     private String validateCode;
 
-    // 必须同时包含小写字母以及数字, 不允许出现"小写字母 + 数字"以外的字符
-    // 由于加密不可逆, 所以后端不做此验证
+    // 必须同时包含小写字母以及数字, 不允许出现"小(大)写字母 + 数字"以外的字符
     @NotBlank(message = "register.password.not.null")
     @Size(min = 7, max = 72)
     private String password;
@@ -43,9 +41,6 @@ public class RegisterForm extends BaseForm {
 
     @Override
     public void validate(Object target, Errors errors) {
-        if (globalKey.contains(".")) {
-            rejectValue(errors, "globalKey", "register.global.key.not.valid");
-        }
         if (!password.equals(repeatPassword)) {
             rejectValue(errors, "repeatPassword", "register.repeat.password.not.equaled");
         }

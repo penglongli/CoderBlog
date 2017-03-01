@@ -24,17 +24,11 @@ public class Account extends BaseEntity{
     @Column(name = "status")
     private Short status;
 
-    @Column(name = "global_key_id")
-    private Integer globalKeyId;
+    @Column(name = "name")
+    private String name;
 
     @Column(name = "email")
     private String email;
-
-    @Column(name = "phone")
-    private String phone;
-
-    @Column(name = "user_name")
-    private String userName;
 
     @Column(name = "avatar")
     private String avatar;
